@@ -16,7 +16,7 @@ public class Main {
 
         // 2. Bucle principal
         do {
-            System.out.println("\n--- 📚 SISTEMA DE GESTIÓN DE BIBLIOTECA ---");
+            System.out.println("Bienvenido, ¿Que desea hacer?");
             System.out.println("1) Agregar libro");
             System.out.println("2) Listar materiales");
             System.out.println("3) Buscar por título");
