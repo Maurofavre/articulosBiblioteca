@@ -13,7 +13,7 @@ public class Articulo extends ArticulosBiblioteca {
     private String autor;
 
     public Articulo(String nombre, int año, String autor) {
-        super(nombre, año); // Envía los datos a ArticulosBiblioteca
+        super(nombre, año); 
         this.autor = autor;
     }
     
@@ -21,25 +21,27 @@ public class Articulo extends ArticulosBiblioteca {
     public void prestar() {
         if (disponible) {
             disponible = false;
-            System.out.println("✅ El artículo '" + getNombre() + "' ha sido prestado.");
+            System.out.println(" El artículo " + getNombre() + " ha sido prestado");
         } else {
-            System.out.println("❌ Lo sentimos, '" + getNombre() + "' ya está prestado.");
+            System.out.println( getNombre() + " ya está prestado");
         }
     }
 
     @Override
     public void devolver() {
+       
+        
         if (!disponible) {
+      
             disponible = true;
-            System.out.println("✅ Has devuelto: " + getNombre());
+            System.out.println(" Has devuelto el articulo" + getNombre());
         } else {
-            System.out.println("⚠️ Este artículo ya estaba disponible.");
+            System.out.println("Artículo ya estaba disponible");
         }
     }
 
     @Override
     public String toString() {
-        // Combinamos el toString de la clase padre con el autor de esta clase
-        return super.toString() + " | Autor: " + autor;
+        return super.toString() + "Autor: " + autor;
     }
-} // Solo una llave al final para cerrar la clase
+} 

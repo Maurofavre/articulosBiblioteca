@@ -9,62 +9,64 @@ package com.mycompany.bblioteca1;
  * @author mauro
  */
 
-import java.util.ArrayList; // Importante para que funcione la lista
+import java.util.ArrayList; 
 import java.util.List;
 
 public class Biblioteca {
-    // Definimos una lista que solo guarda objetos de tipo 'ArticulosBiblioteca'
+   
    private List<ArticulosBiblioteca> listaArticulos;
    
-   // Constructor: Inicializamos la lista vacía
+   // Constructor
     public Biblioteca() {
         this.listaArticulos = new ArrayList<>();
     }
     
-    // 1. Agregar material
-    public void agregarMaterial(ArticulosBiblioteca m) {
-        listaArticulos.add(m);
-        System.out.println("✅ Artículo agregado al inventario.");
+    
+    public void agregarMaterial(ArticulosBiblioteca nuevo) {
+        listaArticulos.add(nuevo);
+        System.out.println("Artículo agregado");
     }
     
-    // 2. Listar todos los materiales
+  
     public void listarMateriales() {
-        System.out.println("\n--- 📚 INVENTARIO DE LA BIBLIOTECA ---");
+       
         if (listaArticulos.isEmpty()) {
-            System.out.println("La biblioteca está vacía por ahora.");
-        } else {
-            for (ArticulosBiblioteca m : listaArticulos) {
-                System.out.println(m.toString());
+            System.out.println("Biblioteca vacia");
+        } 
+        else 
+        {
+            for (ArticulosBiblioteca articulos : listaArticulos) {
+                System.out.println(articulos.toString());
             }
         }
     }
     
-    // 3. Buscar por título (devuelve el objeto o null si no existe)
+   
     public ArticulosBiblioteca buscarPorTitulo(String titulo) {
-        for (ArticulosBiblioteca m : listaArticulos) {
-            // Comparamos el nombre ignorando mayúsculas/minúsculas
-            if (m.getNombre().equalsIgnoreCase(titulo)) {
-                return m;
+        for (ArticulosBiblioteca articuloBuscado : listaArticulos) {
+        
+            if (articuloBuscado.getNombre().equalsIgnoreCase(titulo)) {
+                return articuloBuscado;
             }
         }
         return null;
     }
     
     public void prestarMaterial(String titulo) {
-        ArticulosBiblioteca m = buscarPorTitulo(titulo);
-        if (m != null) {
-            m.prestar(); // Llama al método prestar del objeto encontrado
+        ArticulosBiblioteca nuevoArt = buscarPorTitulo(titulo);
+        if (nuevoArt != null) {
+            nuevoArt.prestar(); 
         } else {
-            System.out.println("❌ Error: No se encontró ningún artículo con ese nombre.");
+            System.out.println("Articulo no encotrado");
         }
     }
     
     public void devolverMaterial(String titulo) {
-        ArticulosBiblioteca m = buscarPorTitulo(titulo);
-        if (m != null) {
-            m.devolver();
+        ArticulosBiblioteca nuevoArtDevuelto = buscarPorTitulo(titulo);
+        if (nuevoArtDevuelto != null) {
+            nuevoArtDevuelto.devolver();
         } else {
-            System.out.println("❌ Error: No se encontró ningún artículo con ese nombre.");
+            System.out.println(" Articulo no encontrado");
         }
     }
    

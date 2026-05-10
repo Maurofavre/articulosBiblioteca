@@ -8,7 +8,7 @@ package com.mycompany.bblioteca1;
  *
  * @author mauro
  */
-public interface Prestable {
+public interface Acciones {
     void prestar();  
     void devolver();
 }

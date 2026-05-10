@@ -8,18 +8,17 @@ package com.mycompany.bblioteca1;
  *
  * @author mauro
  */
-public abstract class ArticulosBiblioteca implements Prestable{
-   //creamos los articulos
-    
+public abstract class ArticulosBiblioteca implements Acciones{
+  
     private String nombre;
     private int año;
     protected boolean disponible;
     
-    //constructor
+    
     public ArticulosBiblioteca(String nombre, int año) {
         this.nombre = nombre;
         this.año = año;
-        this.disponible = true; // Por defecto, al crear algo nuevo, está disponible
+        this.disponible = true; 
     }
     
     public String getNombre() {
@@ -36,7 +35,7 @@ public abstract class ArticulosBiblioteca implements Prestable{
 
     @Override
     public String toString() {
-        String estado = disponible ? "No se encuentra Disponible" : "Si esta disponible";
+        String estado = disponible ? "Si esta disponible" : "No se encuentra Disponible";
         return "Nombre: " + nombre + "Año: " + año + "Disponibilidad: " + estado;
     }
     
